@@ -1,0 +1,78 @@
+<div class="container" style="margin-top: 1vw;">
+    <div class="row justify-content-center">
+        <div class="col-sm-8 align-self-center text-center">
+            <h1>MY PROFILE</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-5 align-self-center text-center" style="margin-top: 4vw;">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <h5>Username: {{customer.username}}</h5>
+                </li>
+                <li class="list-group-item">
+                    <h5>Name: {{customer.name}}</h5>
+                </li>
+                <li class="list-group-item">
+                    <h5>Surname: {{customer.surname}}</h5>
+                </li>
+                <li class="list-group-item">
+                    <h5>Age: {{customer.age}}</h5>
+                </li>
+                <li class="list-group-item">
+                    <h5>Dni: {{customer.dni}}</h5>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-5 align-self-center text-center">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <h5>Subscription: {{customer.sub.rentType}}</h5>
+                </li>
+                <li class="list-group-item">
+                    
+                </li>
+            </ul>
+            <button style="margin-top: 3.3vw;"type="button" (click)="setIdToUpdate(customer.id)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Update Profile
+            </button>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Update your profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="customerName" class="form-label">Name</label>
+                        <input type="text" [(ngModel)]="name" class="form-control" id="customerName"
+                            aria-describedby="emailHelp" placeholder="Name...">
+                    </div>
+                    <div class="mb-3">
+                        <label for="customerSurname" class="form-label">Surname</label>
+                        <input type="text" [(ngModel)]="surname" class="form-control" id="customerSurname"
+                            aria-describedby="emailHelp" placeholder="Surname...">
+                    </div>
+                    <div class="mb-3">
+                        <label for="customerAge" class="form-label">Age</label>
+                        <input type="text" [(ngModel)]="age" class="form-control" id="customerAge"
+                            aria-describedby="emailHelp" placeholder="Age...">
+                    </div>
+                    <div class="mb-3">
+                        <label for="customerDni" class="form-label">Dni</label>
+                        <input type="text" [(ngModel)]="dni" class="form-control" id="customerDni"
+                            aria-describedby="emailHelp" placeholder="Dni...">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" (click)="updateCustomer()"  aria-label="Close" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

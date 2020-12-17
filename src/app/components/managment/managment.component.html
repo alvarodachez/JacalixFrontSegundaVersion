@@ -1,0 +1,62 @@
+<div class="container" style="margin-top: 1vw;">
+    <div class="row justify-content-center">
+        <div class="col-sm-8 align-self-center text-center">
+            <h1>MANAGEMENT</h1>
+        </div>
+    </div>
+</div>
+<div *ngIf="isAdmin == true" class="container" style="margin-top: 4vw;">
+    <div class="row justify-content-center">
+        <div class="col-sm-6 align-self-center text-center">
+            <h5>Username: {{customer.username}}</h5>
+            <h5>Name: {{customer.name}}</h5>
+        </div>
+        <div class="col-sm-5 align-self-center text-center">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Create Product
+            </button>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Create a product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="productName" class="form-label">Product Name</label>
+                        <input type="text" [(ngModel)]="productName" class="form-control" id="productName"
+                            aria-describedby="emailHelp" placeholder="Product name">
+                    </div>
+                    <div class="mb-3"> 
+                        <label for="productDescription" class="form-label">Product Description</label>
+                        <input type="text" [(ngModel)]="productDescription" class="form-control" id="productDescription"
+                            aria-describedby="emailHelp" placeholder="Product description">
+                    </div>
+                    <div class="mb-3">
+                        <label for="rentProduct" class="form-label">Rent Type</label>
+                        <select class="form-select" [(ngModel)]="rentProduct" aria-label="Default select example">
+                            <option value="GOLD">GOLD</option>
+                            <option value="ADVANCED">ADVANCED</option>
+                            <option value="BASIC">BASIC</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="categoryProduct" class="form-label">Product Category</label>
+                        <select class="form-select" [(ngModel)]="categoryProduct" aria-label="Default select example">
+                            <option value="FILM">FILM</option>
+                            <option value="SERIE">SERIE</option>
+                            <option value="DOCUMENTARY">DOCUMENTARY</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" (click)="createProduct()" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
